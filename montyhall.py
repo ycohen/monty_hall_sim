@@ -48,18 +48,20 @@ def calculation(score, switch_score, rounds):
     print ("The probability for choosing the right door when you do switch doors is: ") + str(switch_points)
 
 
-#run the program
-score = 0
-switch_score = 0
+def monte_carlo_monty_hall(rounds):
+    #run the program
+    score = 0
+    switch_score = 0
 
-rounds = start()
-irounds = rounds
+    irounds = rounds
 
-#runs the appropriate number of rounds
-while irounds > 0:
-    score += doors()
-    switch_score += switch_doors()
-    irounds = irounds-1
+    #runs the appropriate number of rounds
+    while irounds > 0:
+        score += doors()
+        switch_score += switch_doors()
+        irounds = irounds-1
 
-#and gives the user the variables
-calculation(score, switch_score, rounds)
+    #and gives the user the variables
+    calculation(score, switch_score, rounds)
+
+monte_carlo_monty_hall(start())
