@@ -35,19 +35,18 @@ def start():
     
 #calculates the percentage of "wins" for the both sets of rounds
 def calculation(score, switch_score, rounds):
-    print ("The Not-Switch Score is: ") + str(score)
-    print ("The Switching Score is: ") + str(switch_score)
+    print "The Not-Switch Score is: " + str(score)
+    print "The Switching Score is: " + str(switch_score)
     points = score*100/rounds
     switch_points = switch_score*100/rounds
-    print ("The probability for choosing the right door when you don't switch doors is: ") + str(points)
-    print ("The probability for choosing the right door when you do switch doors is: ") + str(switch_points)
+    print "The probability for choosing the right door when you don't switch doors is: " + str(points)
+    print "The probability for choosing the right door when you do switch doors is: " + str(switch_points)
 
 
 def monte_carlo_monty_hall(rounds):
     #run the program
     score = 0
     switch_score = 0
-
 
     #runs the appropriate number of rounds
     for i in xrange(rounds):
