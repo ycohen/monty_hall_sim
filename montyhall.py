@@ -12,7 +12,7 @@ def pick_a_random_door():
     return num
 
 #runs the not-switching door scenario, +1 point for CHOOSING the right door
-def doors (): 
+def dont_switch(): 
     car = pick_a_random_door()
     choose = pick_a_random_door()
     if car == choose:
@@ -20,7 +20,7 @@ def doors ():
     return 0
 
 #runs the switching-door scenario, +1 points for NOT choosing the right door
-def switch_doors ():
+def do_switch():
     car = pick_a_random_door()
     choose = pick_a_random_door()
     if car != choose:
@@ -28,13 +28,13 @@ def switch_doors ():
     return 0
 
 #asks the user to input the number of door-choosing rounds to run
-def start():
+def get_round_count():
     rounds = raw_input("How many rounds?")
     rounds = int(rounds)
     return rounds
     
 #calculates the percentage of "wins" for the both sets of rounds
-def calculation(score, switch_score, rounds):
+def print_out_scores(score, switch_score, rounds):
     print "The Not-Switch Score is: " + str(score)
     print "The Switching Score is: " + str(switch_score)
     points = score*100/rounds
@@ -50,10 +50,10 @@ def monte_carlo_monty_hall(rounds):
 
     #runs the appropriate number of rounds
     for i in xrange(rounds):
-        score += doors()
-        switch_score += switch_doors()
+        score += dont_switch()
+        switch_score += do_switch()
 
     #and gives the user the variables
-    calculation(score, switch_score, rounds)
+    print_out_scores(score, switch_score, rounds)
 
-monte_carlo_monty_hall(start())
+monte_carlo_monty_hall(get_round_count())
