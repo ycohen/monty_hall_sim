@@ -12,7 +12,7 @@ score = 0
 switchscore = 0
 
 #runs the not-switching door scenario, +1 point for CHOOSING the right door
-def Doors ():
+def doors ():
 	global irounds
 	car = random.random()
 	car = car*3+1
@@ -26,7 +26,7 @@ def Doors ():
 	irounds = irounds-1
 
 #runs the switching-door scenario, +1 points for NOT choosing the right door
-def SwitchDoors ():
+def switch_doors ():
 	global switchscore
 	car = random.random()
 	car = car*3+1
@@ -38,7 +38,7 @@ def SwitchDoors ():
 		switchscore = switchscore+1
 
 #asks the user to input the number of door-choosing rounds to run
-def Start():
+def start():
 	global rounds
 	global irounds
 	rounds = raw_input("How many rounds?")
@@ -65,12 +65,12 @@ def calculation():
 
 #run the program
 
-Start()
+start()
 
 #runs the appropriate number of rounds
 while irounds > 0:
-	Doors()
-	SwitchDoors()
+	doors()
+	switch_doors()
 
 #and gives the user the variables
 calculation()
