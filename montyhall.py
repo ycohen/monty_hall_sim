@@ -18,14 +18,12 @@ def pick_a_random_door():
     return num
 
 #runs the not-switching door scenario, +1 point for CHOOSING the right door
-def doors ():
-    global irounds
+def doors (): 
     car = pick_a_random_door()
     choose = pick_a_random_door()
     global score
     if car == choose:
         score = score+1
-    irounds = irounds-1
 
 #runs the switching-door scenario, +1 points for NOT choosing the right door
 def switch_doors ():
@@ -69,6 +67,7 @@ start()
 while irounds > 0:
     doors()
     switch_doors()
+    irounds = irounds-1
 
 #and gives the user the variables
 calculation()
