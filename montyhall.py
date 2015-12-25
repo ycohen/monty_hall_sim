@@ -37,13 +37,8 @@ def start():
 def calculation(score, switch_score, rounds):
     print ("The Not-Switch Score is: ") + str(score)
     print ("The Switching Score is: ") + str(switch_score)
-    score = float(score)
-    switsch_score = float(switch_score)
-    rounds = float(rounds)
-    points = (score*100/rounds)
-    switch_points = (switch_score*100/rounds)
-    switch_points = int(switch_points)
-    points = int(points)
+    points = score*100/rounds
+    switch_points = switch_score*100/rounds
     print ("The probability for choosing the right door when you don't switch doors is: ") + str(points)
     print ("The probability for choosing the right door when you do switch doors is: ") + str(switch_points)
 
