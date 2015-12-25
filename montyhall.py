@@ -4,9 +4,6 @@
 
 #sets out the important variables
 import random
-global score
-global switch_score
-global rounds
 
 def pick_a_random_door():
     num = random.random()
@@ -37,10 +34,7 @@ def start():
     return rounds
     
 #calculates the percentage of "wins" for the both sets of rounds
-def calculation():
-    global score
-    global switch_score
-    global rounds
+def calculation(score, switch_score, rounds):
     print ("The Not-Switch Score is: ") + str(score)
     print ("The Switching Score is: ") + str(switch_score)
     score = float(score)
@@ -68,4 +62,4 @@ while irounds > 0:
     irounds = irounds-1
 
 #and gives the user the variables
-calculation()
+calculation(score, switch_score, rounds)
