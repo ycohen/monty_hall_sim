@@ -48,13 +48,11 @@ def monte_carlo_monty_hall(rounds):
     score = 0
     switch_score = 0
 
-    irounds = rounds
 
     #runs the appropriate number of rounds
-    while irounds > 0:
+    for i in xrange(rounds):
         score += doors()
         switch_score += switch_doors()
-        irounds = irounds-1
 
     #and gives the user the variables
     calculation(score, switch_score, rounds)
